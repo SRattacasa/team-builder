@@ -18,10 +18,11 @@ const NoteForm = props => {
 
   return (
     <div className="Form">
-      <h2>Team Members</h2>
+      
       <form onSubmit={e => {
           e.preventDefault();
-          props.addMember()
+          props.addMember(teamlist)
+          console.log(teamlist)
           setteamlist({name: "", email: "", role: ""})
       }}>
           <p>
@@ -33,6 +34,8 @@ const NoteForm = props => {
             <button type='submit'>Click to add team member</button>
         </p>
       </form>
+    <p>Team List</p>
+    
     </div>
   );
 }

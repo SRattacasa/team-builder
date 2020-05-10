@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 
 import "./App.css";
-import NoteForm from './Form'
+import NoteForm from "./Form";
+import List from "./List"
 
 function App() {
   const [teamState, setteamState] = useState([
@@ -10,18 +11,17 @@ function App() {
       name: "Test",
       email: "Test@test.net",
       role: "Dev",
-    }
+    },
   ]);
 
-  const addMember = (newMember) => { 
-    setteamState([...teamState, newMember])
-}
+  const addMember = (newMember) => {
+    setteamState([...teamState, newMember]);
+  };
   return (
     <div className="App">
       <header className="App-header">
         <NoteForm addMember={addMember} />
-       
-        
+        <List list={teamState}/> 
       </header>
     </div>
   );
